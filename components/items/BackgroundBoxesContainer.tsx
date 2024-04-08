@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Boxes } from "../ui/background-boxes";
+import { Boxes } from "@/components/ui/background-boxes";
 import { cn } from "@/lib/utils";
 
 export function BackgroundBoxesContainer({
@@ -16,9 +16,7 @@ export function BackgroundBoxesContainer({
         Welcome to Dat' Dev
       </h1>
       {children}
-      {/* <p className="text-center mt-2 text-neutral-300 relative z-20">
-        Framer motion is the best animation library ngl
-      </p> */}
+
     </div>
   );
 }

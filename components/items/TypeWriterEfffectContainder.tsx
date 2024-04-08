@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 export function TypewriterEffectSmoothContainer({
   text,
   highLineWord,

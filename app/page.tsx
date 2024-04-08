@@ -46,7 +46,7 @@ export default function Home() {
       >
         <CardHoverEffectContainer />
       </div>
-      <div>
+      <div id="section_3">
         <GlobeContainer/>
       </div>
     </main>
