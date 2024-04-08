@@ -61,12 +61,10 @@ export function TypewriterEffectSmoothContainer({
             href="#section_1"
             className="w-40 h-10 pt-1 hover:bg-black-500 hover:bg-opacity-50 hover:text-white rounded-full bg-white border text-center dark:border-white hover:font-semibold border-transparent text-black font-bold  text-2xl"
           >
-            Let's go ...
+            {` Let's go ...`}
           </motion.a>
         )}
-        {/* <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
-          Signup
-        </button> */}
+       
       </div>
     </div>
   );
