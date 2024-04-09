@@ -29,7 +29,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white "
       >
         {item}
       </motion.p>
@@ -71,7 +71,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.5] bg-white shadow-input flex justify-center space-x-4 px-6 py-6"
     >
       {children}
     </nav>
@@ -89,7 +89,7 @@ export const ProductItem = ({
   description: string;
   href: string;
   src: string;
-  classItem ?:string
+  classItem?: string;
 }) => {
   return (
     <Link href={href} className={cn("flex space-x-2 md:mt-0 pt-4", classItem)}>
