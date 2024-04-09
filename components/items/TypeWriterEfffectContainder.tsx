@@ -80,13 +80,13 @@ export function TypewriterEffectSmoothContainer({
             }}
             transition={{
               duration: 2,
-              repeat: 0,
+              repeat: 1,
               repeatType: "reverse",
             }}
             href="#section_1"
             className="w-40 h-10 pt-1 hover:bg-black-500 hover:bg-opacity-50 hover:text-white rounded-full bg-white border text-center dark:border-white hover:font-semibold border-transparent text-black font-bold  text-2xl"
           >
-            {`Let's go!`}
+            Let's go!
           </motion.a>
         )}
       </div>
