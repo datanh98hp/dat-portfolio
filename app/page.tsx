@@ -11,7 +11,8 @@ export default function Home() {
       <div className="bg-cube-banner bg-cover bg-clip-content bg-center h-screen w-full">
         <div className="flex h-full flex-col md:flex-row gap-10 justify-center items-center">
           <TypewriterEffectSmoothContainer
-            text="Build awesome apps with Aceternity."
+            text="Wellcome to Developer's Đỗ Văn Đạt ja"
+            highLineWord="Đỗ Văn Đạt"
             highLineClass="text-white-500 dark:text-blue-500"
           />
         </div>
@@ -24,7 +25,7 @@ export default function Home() {
         <BackgroundGradientAnimationContainer>
           <div className="flex h-full flex-col md:flex-row justify-center items-center">
             <div className="md:w-[50%] ">
-              <TextGenerateEffectContainer words="Oxygen gets you high. In a catastrophic emergency, we're taking giant, panicked breaths. Suddenly you become euphoric, docile. You accept your fate." />
+              <TextGenerateEffectContainer words="Wellcome to Developer's Đỗ Văn Đạt" />
             </div>
             <div className="md:w-[50%] pt-6 md:pt-0 flex items-center justify-center">
               <Image

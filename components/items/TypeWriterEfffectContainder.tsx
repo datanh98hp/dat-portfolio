@@ -8,9 +8,33 @@ export function TypewriterEffectSmoothContainer({
   highLineClass,
 }: {
   text: string;
-  highLineWord?:string
-  highLineClass: string;
+  highLineWord?: string;
+  highLineClass?: string;
 }) {
+  // console.log(text.split(""));
+  const genWords = (text: string) => {
+    const list = text?.split(" ");
+    const result: any = [];
+    const lsHighLine = highLineWord?.split(" ");
+    list.map((item: string) => {
+      if (highLineWord !== null) {
+        result.push({
+          text: item,
+        });
+      } else {
+        lsHighLine?.map((value: string) => {
+          if (value.includes(item)) {
+            result.push({
+              text: item,
+              className: highLineClass,
+            });
+          }
+        });
+      }
+    });
+    return result;
+  };
+
   const words = [
     {
       text: "Wellcome",
@@ -22,20 +46,17 @@ export function TypewriterEffectSmoothContainer({
       text: "Developer's",
     },
     {
-      text: "Developer's",
-      className: "text-white-500 dark:text-white-500",
-    },
-    {
       text: "Đỗ Văn Đạt.",
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
+
   const [isShowBtn, setisShowBtn] = useState(false);
   useEffect(() => {
     return () => {
-      setInterval(()=>{
-        setisShowBtn(true)
-      },3000);
+      setInterval(() => {
+        setisShowBtn(true);
+      }, 3000);
     };
   }, [isShowBtn]);
   return (
@@ -43,7 +64,11 @@ export function TypewriterEffectSmoothContainer({
       {/* <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base  ">
         The road to freedom starts from here
       </p> */}
-      <TypewriterEffectSmooth words={words} className="text-6xl" />
+      <TypewriterEffectSmooth
+        words={words}
+        className="text-6xl"
+        cursorClassName="bg-white-500"
+      />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
         {isShowBtn && (
           <motion.a
@@ -61,7 +86,7 @@ export function TypewriterEffectSmoothContainer({
             href="#section_1"
             className="w-40 h-10 pt-1 hover:bg-black-500 hover:bg-opacity-50 hover:text-white rounded-full bg-white border text-center dark:border-white hover:font-semibold border-transparent text-black font-bold  text-2xl"
           >
-          Let's go
+            Let's go
           </motion.a>
         )}
       </div>
