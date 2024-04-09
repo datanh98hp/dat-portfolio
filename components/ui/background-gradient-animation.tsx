@@ -46,7 +46,7 @@ export const BackgroundGradientAnimation = ({
     );
     document.body.style.setProperty(
       "--gradient-background-end",
-      gradientBackgroundEnd == null ? "" : gradientBackgroundEnd
+      gradientBackgroundEnd ==null ? "" : gradientBackgroundEnd
     );
     document.body.style.setProperty("--first-color", firstColor == null ? "" : firstColor);
     document.body.style.setProperty("--second-color", secondColor ? "": secondColor);
@@ -71,9 +71,7 @@ export const BackgroundGradientAnimation = ({
     }
 
     move();
-  }, [
-    //tgX, tgY
-  ]);
+  }, [tgX, tgY]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {
@@ -89,7 +87,6 @@ export const BackgroundGradientAnimation = ({
   }, []);
 
   return (
-    
     <div
       className={cn(
         "h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",

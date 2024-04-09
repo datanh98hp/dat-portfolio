@@ -24,7 +24,7 @@ export const TextGenerateEffect = ({
       }
     );
   }, [
-    // scope.current
+    scope.current
   ]);
 
   const renderWords = () => {
