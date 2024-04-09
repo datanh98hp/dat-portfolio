@@ -69,27 +69,29 @@ export function TypewriterEffectSmoothContainer({
         className="text-6xl"
         cursorClassName="bg-white-500"
       />
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4"
+      >
         {isShowBtn && (
-          <motion.a
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              duration: 2,
-              repeat: 1,
-              repeatType: "reverse",
-            }}
+          <a
             href="#section_1"
             className="w-40 h-10 pt-1 hover:bg-black-500 hover:bg-opacity-50 hover:text-white rounded-full bg-white border text-center dark:border-white hover:font-semibold border-transparent text-black font-bold  text-2xl"
           >
             Let's go!
-          </motion.a>
+          </a>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 }
