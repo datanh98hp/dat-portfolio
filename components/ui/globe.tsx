@@ -97,7 +97,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildMaterial();
     }
   }, [
-    //globeRef.current
+    globeRef.current
   ]);
 
   const _buildMaterial = () => {
@@ -165,7 +165,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       startAnimation();
     }
   }, [
-    //globeData
+    globeData
   ]);
 
   const startAnimation = () => {
