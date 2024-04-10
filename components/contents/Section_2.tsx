@@ -1,5 +1,4 @@
 import { CardHoverEffectContainer } from "@/components/items/HoverEffectContainer";
-
 export default function Section_2() {
   return (
     <>

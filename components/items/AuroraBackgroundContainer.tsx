@@ -27,9 +27,6 @@ export function AuroraBackgroundContainer({
           classNameContainer
         )}
       >
-        {/* <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
-          Background lights are cool you know.
-        </div> */}
         {children}
       </motion.div>
     </AuroraBackground>

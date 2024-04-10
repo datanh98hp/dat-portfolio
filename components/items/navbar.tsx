@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   HoveredLink,
   Menu,
@@ -28,55 +28,62 @@ function Navbar({ className }: { className?: string }) {
 
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-        repeat: 0,
-        repeatType: "reverse",
-      }}
-      className={cn(
-        "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 b",
-        className
-      )}
-    >
-      <Menu setActive={setActive}>
-        <HoveredLink href="/">Home</HoveredLink>
-        <MenuItem setActive={setActive} active={active} item="Explore">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/skill">Skill</HoveredLink>
-            <HoveredLink href="/experience">Experience</HoveredLink>
-            <HoveredLink href="/gallery">Gallery</HoveredLink>
-            <HoveredLink href="/social">Branding</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
-          <div className="text-sm md:grid md:grid-cols-2 md:gap-10 md:p-2 ">
-            <ProductItem
-              classItem="hover:shadow-2xl hover:rounded-xl p-4"
-              title="Project name (1)"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
-            />
-            <ProductItem
-              classItem="hover:shadow-2xl hover:rounded-xl p-4"
-              title="Project name (2)"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
-            />
-          </div>
-        </MenuItem>
-        <HoveredLink href="/about">About</HoveredLink>
-        {/* <MenuItem setActive={setActive} active={active} item="Pricing">
+    <>
+      {isClient ? (
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            repeat: 0,
+            repeatType: "reverse",
+          }}
+          className={cn(
+            "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 b",
+            className
+          )}
+        >
+          <Menu setActive={setActive}>
+            <HoveredLink href="/">Home</HoveredLink>
+            <MenuItem setActive={setActive} active={active} item="Explore">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/skill">Skill</HoveredLink>
+                <HoveredLink href="/experience">Experience</HoveredLink>
+                <HoveredLink href="/gallery">Gallery</HoveredLink>
+                <HoveredLink href="/social">Branding</HoveredLink>
+              </div>
+            </MenuItem>
+            <MenuItem setActive={setActive} active={active} item="Products">
+              <div className="text-sm md:grid md:grid-cols-2 md:gap-10 md:p-2 ">
+                <ProductItem
+                  classItem="hover:shadow-2xl hover:rounded-xl p-4"
+                  title="Project name (1)"
+                  href="https://algochurn.com"
+                  src="https://assets.aceternity.com/demos/algochurn.webp"
+                  description="Prepare for tech interviews like never before."
+                />
+                <ProductItem
+                  classItem="hover:shadow-2xl hover:rounded-xl p-4"
+                  title="Project name (2)"
+                  href="https://tailwindmasterkit.com"
+                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                  description="Production ready Tailwind css components for your next project"
+                />
+              </div>
+            </MenuItem>
+            <HoveredLink href="/about">About</HoveredLink>
+            {/* <MenuItem setActive={setActive} active={active} item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
@@ -84,14 +91,15 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
         </MenuItem> */}
-        
-          {currentTheme == "dark" ? (
-            <IconSun onClick={() => setTheme("light")} />
-          ) : (
-            <IconMoon color="black" onClick={() => setTheme("dark")} />
-          )}
-    
-      </Menu>
-    </motion.div>
+
+            {currentTheme == "dark" ? (
+              <IconSun onClick={() => setTheme("light")} />
+            ) : (
+              <IconMoon color="black" onClick={() => setTheme("dark")} />
+            )}
+          </Menu>
+        </motion.div>
+      ) : null}
+    </>
   );
 }
