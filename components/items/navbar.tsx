@@ -8,6 +8,9 @@ import {
 } from "@/components/ui/navbar-menu";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
+import { IconMoon, IconSun } from "@tabler/icons-react";
+import ButtonMagicBorder from "./ButtonBorderMagic";
 
 export function NavbarMenu() {
   return (
@@ -22,6 +25,10 @@ export function NavbarMenu() {
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
+
   return (
     <motion.div
       initial={{
@@ -42,9 +49,8 @@ function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         <HoveredLink href="/">Home</HoveredLink>
-        <MenuItem setActive={setActive} active={active} item="Services">
+        <MenuItem setActive={setActive} active={active} item="Explore">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/">Home</HoveredLink>
             <HoveredLink href="/skill">Skill</HoveredLink>
             <HoveredLink href="/experience">Experience</HoveredLink>
             <HoveredLink href="/gallery">Gallery</HoveredLink>
@@ -78,6 +84,13 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
         </MenuItem> */}
+        
+          {currentTheme == "dark" ? (
+            <IconSun onClick={() => setTheme("light")} />
+          ) : (
+            <IconMoon color="black" onClick={() => setTheme("dark")} />
+          )}
+    
       </Menu>
     </motion.div>
   );

@@ -11,12 +11,15 @@
   "dependencies": {
     "@react-three/drei": "^9.105.2",
     "@react-three/fiber": "^8.16.1",
+    "@tabler/icons-react": "^3.1.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.25",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.4",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-element-to-jsx-string": "^15.0.0",
     "tailwind-merge": "^2.2.2",
     "three": "^0.163.0",
     "three-globe": "^2.31.0"
