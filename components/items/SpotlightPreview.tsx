@@ -25,7 +25,7 @@ export function SpotlightPreview({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className={cn(
-        "h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden",
+        "h-[40rem] w-full rounded-md flex md:items-center md:justify-center dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden",
         classNameContainer
       )}
     >
@@ -34,10 +34,10 @@ export function SpotlightPreview({
         fill="white"
       />
       <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
-        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-blue-950 bg-opacity-50">
+        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b dark:from-white from-blue-950 dark:to-blue-950 to-white bg-opacity-50">
           {title}
         </h1>
-        <p className="mt-4 font-normal text-base text-black max-w-lg text-center mx-auto">
+        <p className="mt-4 font-normal dark:text-white text-white max-w-lg text-center mx-auto">
           {description}
         </p>
       </div>

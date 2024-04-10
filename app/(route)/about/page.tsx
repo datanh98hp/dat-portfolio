@@ -1,5 +1,6 @@
 "use client";
 import { AuroraBackgroundContainer } from "@/components/items/AuroraBackgroundContainer";
+import { CanvasRevealEffectContainer } from "@/components/items/CanvasRevealEffectContainer";
 import { SpotlightPreview } from "@/components/items/SpotlightPreview";
 import { NavbarMenu } from "@/components/items/navbar";
 import { motion } from "framer-motion";
@@ -33,9 +34,10 @@ export default function AboutPage() {
         className="h-screen flex flex-col"
       >
         <AuroraBackgroundContainer>
-          <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+          {/* <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
             Background lights are cool you know.
-          </div>
+          </div> */}
+          <CanvasRevealEffectContainer/>
         </AuroraBackgroundContainer>
       </div>
     </main>
