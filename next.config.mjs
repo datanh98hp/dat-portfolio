@@ -15,6 +15,9 @@ const nextConfig = {
             },
             {
                 hostname: "png.pngtree.com"
+            },
+            {
+                hostname: "images.unsplash.com"
             }
         ],
     },

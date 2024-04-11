@@ -13,6 +13,7 @@ export function CanvasRevealEffectContainer() {
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-emerald-900"
+            
           />
         </Card>
         <Card title="Nisha is Munni" icon={<AceternityIcon />}>
@@ -27,6 +28,7 @@ export function CanvasRevealEffectContainer() {
           />
           {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+         
         </Card>
         <Card title="Munni is Aditi" icon={<AceternityIcon />}>
           <CanvasRevealEffect
@@ -58,7 +60,7 @@ const Card = ({
   icon,
   children,
 }: {
-  title: string;
+  title: React.ReactNode;
   icon: React.ReactNode;
   children?: React.ReactNode;
 }) => {
@@ -92,6 +94,7 @@ const Card = ({
         </div>
         <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
+          
         </h2>
       </div>
     </div>

@@ -23,7 +23,7 @@ export function AuroraBackgroundContainer({
           ease: "easeInOut",
         }}
         className={cn(
-          "relative flex flex-col gap-4 items-center justify-center",
+          "relative flex flex-col gap-1 items-center justify-center",
           classNameContainer
         )}
       >
