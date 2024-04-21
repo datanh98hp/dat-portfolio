@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { AuroraBackground } from "../ui/aurora-background";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { cn } from "@/lib/utils";
 
 export function AuroraBackgroundContainer({
@@ -13,7 +13,7 @@ export function AuroraBackgroundContainer({
   classNameContainer?:string;
 }) {
   return (
-    <AuroraBackground>
+    <AuroraBackground children={undefined}>
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -96,9 +96,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildData();
       _buildMaterial();
     }
-  }, [
-    globeRef.current
-  ]);
+  }, [globeRef.current]);
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -164,9 +162,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         });
       startAnimation();
     }
-  }, [
-    globeData
-  ]);
+  }, [globeData]);
 
   const startAnimation = () => {
     if (!globeRef.current || !globeData) return;
@@ -206,28 +202,31 @@ export function Globe({ globeConfig, data }: WorldProps) {
       );
   };
 
-  useEffect(() => {
-    if (!globeRef.current || !globeData) return;
-
-    const interval = setInterval(() => {
+  useEffect(
+    () => {
       if (!globeRef.current || !globeData) return;
-      numbersOfRings = genRandomNumbers(
-        0,
-        data.length,
-        Math.floor((data.length * 4) / 5)
-      );
 
-      globeRef.current.ringsData(
-        globeData.filter((d, i) => numbersOfRings.includes(i))
-      );
-    }, 2000);
+      const interval = setInterval(() => {
+        if (!globeRef.current || !globeData) return;
+        numbersOfRings = genRandomNumbers(
+          0,
+          data.length,
+          Math.floor((data.length * 4) / 5)
+        );
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [
-    //globeRef.current, globeData
-  ]);
+        globeRef.current.ringsData(
+          globeData.filter((d, i) => numbersOfRings.includes(i))
+        );
+      }, 2000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    },
+    [
+      //globeRef.current, globeData
+    ]
+  );
 
   return (
     <>
