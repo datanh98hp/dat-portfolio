@@ -23,10 +23,11 @@ export function SpotlightPreview({
   // }
   return (
     <motion.div
+    
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className={cn(
-        "h-screen w-full rounded-md flex md:items-center md:justify-center dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden",
+        "h-screen rounded-md flex md:items-center md:justify-center dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden",
         classNameContainer
       )}
     >

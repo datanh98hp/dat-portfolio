@@ -1,11 +1,16 @@
 "use client";
+import ProfileCard from "@/components/contents/ProfileCard";
 import { AuroraBackgroundContainer } from "@/components/items/AuroraBackgroundContainer";
+import { MovingBorderContainer } from "@/components/items/MovingBorderContainer";
 import { SpotlightPreview } from "@/components/items/SpotlightPreview";
 import { NavbarMenu } from "@/components/items/navbar";
 import { CardStack } from "@/components/ui/card-stack";
 import { Highlight } from "@/components/ui/hero-highlight";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { FaFaceGrinTears } from "react-icons/fa6";
 
 const CARDS = [
   {
@@ -69,6 +74,7 @@ export default function AboutPage() {
           Next to
         </Link>
       </motion.div>
+      <ProfileCard/>
       <div id="sec_2">
         <AuroraBackgroundContainer classNameContainer="h-screen w-full">
           <div className="md:flex  px-6">

@@ -23,6 +23,7 @@ const nextConfig = {
                 hostname: "cdn.dribbble.com"
             }
         ],
+        disableStaticImages: true,
     },
 };
 
