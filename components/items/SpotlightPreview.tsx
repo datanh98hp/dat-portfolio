@@ -9,7 +9,6 @@ export function SpotlightPreview({
   classNameContainer,
   title,
   description,
-
 }: {
   classNameContainer?: string;
   title?: string;
@@ -50,7 +49,8 @@ export function SpotlightPreview({
         >
           <Link
             href="#sec_1"
-            className="py-3 px-4 bg-black text-white border border-[0.02] text-center rounded-full hover:bg-white hover:text-black border-white border-transparent text-black font-bold  text-base"
+            className="py-3 px-4 bg-black text-white border 
+            border-[0.02] text-center rounded-full hover:bg-white hover:text-black border-white border-transparent text-black font-bold  text-base"
           >
             Next to
           </Link>
