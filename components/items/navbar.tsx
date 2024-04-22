@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import ButtonMagicBorder from "./ButtonBorderMagic";
+import { projects } from "@/lib/data-content/projects";
 
 export function NavbarMenu() {
   return (
@@ -50,7 +51,7 @@ function Navbar({ className }: { className?: string }) {
             repeatType: "reverse",
           }}
           className={cn(
-            "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 b",
+            "fixed top-10 inset-x-0 max-w-xl mx-auto z-50",
             className
           )}
         >
@@ -66,20 +67,16 @@ function Navbar({ className }: { className?: string }) {
             </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Products">
               <div className="text-sm md:grid md:grid-cols-2 md:gap-10 md:p-2 ">
-                <ProductItem
-                  classItem="hover:shadow-2xl hover:rounded-xl p-4"
-                  title="Project name (1)"
-                  href="https://algochurn.com"
-                  src="https://assets.aceternity.com/demos/algochurn.webp"
-                  description="Prepare for tech interviews like never before."
-                />
-                <ProductItem
-                  classItem="hover:shadow-2xl hover:rounded-xl p-4"
-                  title="Project name (2)"
-                  href="https://tailwindmasterkit.com"
-                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                  description="Production ready Tailwind css components for your next project"
-                />
+                {projects.map((project) => (
+                  <ProductItem
+                    classItem="hover:shadow-2xl hover:rounded-xl p-4"
+                    key={project.title}
+                    title={project.title}
+                    href={project.href}
+                    src={project.thumbnail}
+                    description={project.description}
+                  />
+                ))}
               </div>
             </MenuItem>
             <HoveredLink href="/about">

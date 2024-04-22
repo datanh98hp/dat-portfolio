@@ -12,7 +12,7 @@ export default function Section_1() {
         className="flex h-screen w-full border border-0  justify-evenly  overflow-hidden"
       >
         <BackgroundGradientAnimationContainer>
-          <div className="flex h-full flex-col md:flex-row p-5 items-center justify-around">
+          <div className="flex h-full flex-col md:flex-row p-5 items-center ju">
             <div className="my-5 mx-8">
               <TextGenerateEffectContainer words="Wellcome to Developer's Đỗ Văn Đạt" />
             </div>

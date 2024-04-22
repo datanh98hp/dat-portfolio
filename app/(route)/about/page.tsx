@@ -1,16 +1,13 @@
 "use client";
 import ProfileCard from "@/components/contents/ProfileCard";
 import { AuroraBackgroundContainer } from "@/components/items/AuroraBackgroundContainer";
-import { MovingBorderContainer } from "@/components/items/MovingBorderContainer";
 import { SpotlightPreview } from "@/components/items/SpotlightPreview";
 import { NavbarMenu } from "@/components/items/navbar";
-import { CardStack } from "@/components/ui/card-stack";
 import { Highlight } from "@/components/ui/hero-highlight";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { FaFaceGrinTears } from "react-icons/fa6";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 const CARDS = [
   {
@@ -59,21 +56,9 @@ export default function AboutPage() {
       <SpotlightPreview
         classNameContainer=""
         title="About for Developer's Dat"
-        description="Là một người sinh ra trong một gia đình có truyền thống hiếu học, và có niềm đam mê máy tính từ khi còn học trung học."
-      ></SpotlightPreview>
-      <motion.div
-        style={{ y: "calc(100vw - 60%)" }}
-        animate={{ y: -150 }}
-        transition={{ duration: 1.5 }}
-        className=" flex flex-col justify-center items-center"
-      >
-        <Link
-          href="#sec_1"
-          className="py-3 px-4 bg-black text-white border border-[0.02] text-center rounded-full hover:bg-white hover:text-black border-white border-transparent text-black font-bold  text-base"
-        >
-          Next to
-        </Link>
-      </motion.div>
+        description="To develop website like as a freelancer job."
+      />
+
       <div id="sec_1" className="">
         <ProfileCard />
       </div>
@@ -101,12 +86,6 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          <Link
-            href="#sec_2"
-            className="w-40 h-10 p-1 mt-16 border-spacing-1 border-gray-300 rounded-full dark:text-white border text-center border-[0.02] border-black dark:border-white border-transparent dark:text-white bg-transparent dark:text-black font-mono  text-2xl dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
-          >
-            Next to
-          </Link>
         </AuroraBackgroundContainer>
       </div>
       <div id="sec_3" className="h-screen w-full relative">
@@ -124,10 +103,10 @@ export default function AboutPage() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         <Link
-          href="#sec_3"
-          className="absolute bottom-2 left-1/2 -translate-x-1/2 py-3 px-4 dark:bg-black dark:text-white bg-white text-black border border-[0.02] text-center rounded-full hover:bg-white hover:text-black border-white border-transparent text-black font-bold  text-base"
+          href="#spotlight"
+          className="absolute bottom-2 left-1/2 -translate-x-1/2 py-3 px-4 dark:bg-black dark:text-white bg-white text-black border border-[0.02] text-center rounded-full hover:bg-white hover:text-black border-white border-transparent text-black font-bold text-base p-2"
         >
-          Next to
+          <FaArrowCircleUp />
         </Link>
       </div>
     </main>
