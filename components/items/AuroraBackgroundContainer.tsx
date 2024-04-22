@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { cn } from "@/lib/utils";
 
 export function AuroraBackgroundContainer({
   children,
@@ -21,7 +22,10 @@ export function AuroraBackgroundContainer({
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
+        className={cn(
+          "relative flex flex-col gap-4 items-center justify-center px-4",
+          classNameContainer
+        )}
       >
         <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
           Background lights are cool you know.
@@ -33,6 +37,7 @@ export function AuroraBackgroundContainer({
           Debug now
         </button>
       </motion.div>
+      {children}
     </AuroraBackground>
   );
 }
