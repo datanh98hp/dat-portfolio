@@ -1,6 +1,6 @@
 "use client";
 import ProfileCard from "@/components/contents/ProfileCard";
-import { AuroraBackgroundContainer } from "@/components/items/Aurora BackgroundContainer";
+import { AuroraBackgroundContainer } from "@/components/items/AuroraBackgroundContainer";
 
 import { SpotlightPreview } from "@/components/items/SpotlightPreview";
 import { NavbarMenu } from "@/components/items/navbar";
