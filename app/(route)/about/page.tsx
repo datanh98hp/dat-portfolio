@@ -68,13 +68,16 @@ export default function AboutPage() {
         className=" flex flex-col justify-center items-center"
       >
         <Link
-          href="#sec_2"
+          href="#sec_1"
           className="py-3 px-4 bg-black text-white border border-[0.02] text-center rounded-full hover:bg-white hover:text-black border-white border-transparent text-black font-bold  text-base"
         >
           Next to
         </Link>
       </motion.div>
-      <ProfileCard/>
+      <div id="sec_1" className="">
+        <ProfileCard />
+      </div>
+
       <div id="sec_2">
         <AuroraBackgroundContainer classNameContainer="h-screen w-full">
           <div className="md:flex  px-6">
