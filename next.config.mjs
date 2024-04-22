@@ -25,6 +25,9 @@ const nextConfig = {
         ],
         disableStaticImages: true,
     },
+    eslint: {
+        dirs: ['pages', 'utils']
+    }
 };
 
 export default nextConfig;
