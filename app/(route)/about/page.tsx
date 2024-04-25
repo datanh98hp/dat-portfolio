@@ -1,4 +1,4 @@
-"use client";
+import FormContact from "@/components/contents/FormContact";
 import ProfileCard from "@/components/contents/ProfileCard";
 import { AuroraBackgroundContainer } from "@/components/items/AuroraBackgroundContainer";
 import { SpotlightPreview } from "@/components/items/SpotlightPreview";
@@ -64,30 +64,17 @@ export default function AboutPage() {
 
       <div id="sec_2">
         <AuroraBackgroundContainer classNameContainer="">
-          <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+          {/* <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
             Contact to me
-          </div>
-          <div className="md:flex">
-            {/* <CardStack items={CARDS} /> */}
-            <div className="md:p-3 md:mt-0 mt-20 dark:text-white dark:bg-transparent">
-              {/* <h3 className="text-center text-xl">Contact to me</h3> */}
-              <div className="p-4 border rounded-xl mt-2 flex flex-col gap-3 bg-white bg-opacity-20 border-gray-400 dark:text-white">
-                <textarea
-                  className="resize-none min-w-80 p-3 w-full rounded-md bg-transparent border border-[0.08] border-gray-200"
-                  placeholder="Type your message"
-                />
-                <input
-                  type="email"
-                  className="rounded-md bg-transparent h-[50%] w-full p-3 border border-[0.08] bg-transparent border-gray-200"
-                  placeholder="Email"
-                />
-                <button className="md:mt-5 dark:text-white dark:bg-transparent border border-gray-500 dark:border-[0.01] md:bg-black md:text-white bg-slate-300 hover:shadow-xl hover:shadow-2xl border-[0.02] text-black p-2 rounded-md">
-                  Send
-                </button>
-              </div>
-            </div>
-          </div>
+          </div> */}
+          <FormContact />
         </AuroraBackgroundContainer>
+        {/* <div className="md:flex">
+       
+          <div className="md:p-3 md:mt-0 mt-20 dark:text-white dark:bg-transparent">
+          
+          </div>
+        </div> */}
       </div>
       <div id="sec_3" className="h-screen w-full relative">
         <iframe

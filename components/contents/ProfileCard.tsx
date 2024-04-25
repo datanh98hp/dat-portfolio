@@ -30,10 +30,10 @@ export default function ProfileCard() {
             style={{
               objectFit: "contain",
             }}
-            className="md:w-fit mt-35"
+            className="md:w-fit mt-34"
           ></Image>
         </MovingBorderContainer>
-        <div className="">
+        
           <ul className="md:p-0 md:px-0 px-4 md:text-balance break-all">
             <li className="text-4xl">Do Van Dat</li>
             <li className="text-sm mb-8 mt-1">
@@ -72,7 +72,7 @@ export default function ProfileCard() {
               </span>
             </li>
           </ul>
-        </div>
+        
       </div>
       <motion.div
         style={{ opacity: 0,y: -160 }}
