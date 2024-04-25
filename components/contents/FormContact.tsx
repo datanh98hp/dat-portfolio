@@ -1,21 +1,31 @@
 "use client";
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function FormContact() {
-  const [mess, setMess] = useState("");
-  const [email, setEmail] = useState("");
-
+  // const [mess, setMess] = useState("");
+  // const [email, setEmail] = useState("");
+  const [result, setResult] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const sendContact = (data: any) => {
+  const sendContact = async (data: any) => {
     console.log(data);
-    alert("Sending...");
+    //dat19hp@gmail.com
+    // alert("Sending...");
+    await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    setResult(true);
+    reset();
   };
 
   return (
@@ -34,6 +44,7 @@ export default function FormContact() {
         {...register("email", { required: true })}
         placeholder="Email"
       />
+      {result && <p className="text-white-400 text-center">Messsage is sended</p>}
       <button className="md:mt-5 dark:text-white dark:bg-transparent border border-gray-500 dark:border-[0.01] md:bg-black md:text-white bg-slate-300 hover:shadow-xl hover:shadow-2xl border-[0.02] text-black p-2 rounded-md">
         Send
       </button>
