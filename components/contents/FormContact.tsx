@@ -15,11 +15,11 @@ export default function FormContact() {
 
   const sendContact = async (data: any) => {
     console.log(data);
-    //dat19hp@gmail.com
+    //dat198hp@gmail.com
     // alert("Sending...");
     await fetch("/api/contact", {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, urlPath: window.location.href }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -44,7 +44,9 @@ export default function FormContact() {
         {...register("email", { required: true })}
         placeholder="Email"
       />
-      {result && <p className="text-white-400 text-center">Messsage is sended</p>}
+      {result && (
+        <p className="text-white-400 text-center">Messsage is sended</p>
+      )}
       <button className="md:mt-5 dark:text-white dark:bg-transparent border border-gray-500 dark:border-[0.01] md:bg-black md:text-white bg-slate-300 hover:shadow-xl hover:shadow-2xl border-[0.02] text-black p-2 rounded-md">
         Send
       </button>

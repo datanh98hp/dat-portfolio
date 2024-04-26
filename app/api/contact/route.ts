@@ -11,8 +11,8 @@ export async function GET(request: Request) {
 
 export async function POST(request: NextRequest) {
     const res = await request.json();
-    const { email, message } = res;
-
+    const { email, message,urlPath } = res;
+   
     await sendEmail({
         from: 'dat198hp@gmail.com',
         to: email,
@@ -22,10 +22,11 @@ export async function POST(request: NextRequest) {
         <p>You have new contact</p>
         <p> from : ${email}</p>
         <p> message : ${message}</p>
+        <a>${urlPath}</a>
         `,
     });
     
-    console.log("REQUES IS    ", email)
+    console.log("Send email to :    ", email)
 
     return NextResponse.json(res)
     //return NextResponse.json({ msg: 'reply contact email' });
