@@ -1,4 +1,5 @@
 
+import { transform } from 'next/dist/build/swc';
 import nodemailer from 'nodemailer';
 
 interface EmailContent {
@@ -8,7 +9,7 @@ interface EmailContent {
     text: string;
     html: string;
 }
-export const  sendEmail = async (
+export const sendEmail = async (
     { from, to, subject, text, html }: EmailContent) => {
 
     const transporter = nodemailer.createTransport({
@@ -26,22 +27,18 @@ export const  sendEmail = async (
         secure: true
     });
 
-    //send email
-    transporter.sendMail({
-        from,
-        to,
-        subject,
-        text,
-        html
-    }, (err) => {
-        if (err) {
+    await new Promise((resolve, reject) => {
+        //send email
+        transporter.sendMail({
+            from,
+            to,
+            subject,
+            text,
+            html
+        }, (err) => {
             console.log(err)
-            return {
-                error: err
-            };
-        }
-        return {
-            success: true
-        };
+            reject(err)
+        })
     })
+
 }
