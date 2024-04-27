@@ -21,6 +21,9 @@ const nextConfig = {
             },
             {
                 hostname: "cdn.dribbble.com"
+            },
+            {
+                hostname: "www.cbc.ca"
             }
         ],
         disableStaticImages: true,

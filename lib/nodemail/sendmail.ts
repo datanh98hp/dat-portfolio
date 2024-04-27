@@ -40,5 +40,4 @@ export const sendEmail = async (
             reject(err)
         })
     })
-
 }
