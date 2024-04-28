@@ -56,7 +56,7 @@ export function StickyScrollRevealContainer() {
     <div className=" p-0 pt-[6rem]">
       <StickyScroll content={content} />
       <div className="w-full h-[30vh] flex items-center justify-center gap-10">
-        <button
+        {/* <button
           onClick={() => (window.location.href = "/skill#more_experience")}
           className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block"
         >
@@ -82,7 +82,7 @@ export function StickyScrollRevealContainer() {
             </svg>
           </div>
           <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
-        </button>
+        </button> */}
 
         <button
           onClick={()=>window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}

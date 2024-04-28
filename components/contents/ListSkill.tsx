@@ -61,7 +61,7 @@ export default function ListSkill() {
   return (
     <div className="relative" id="skill">
       <h1 className="text-center text-4xl font-medium font-bold mb-[30px]">
-        My skills
+        My Experiences
       </h1>
       <div className="md:grid grid-cols-2 md:gap-7">
         {listSkill.map((_, index) => (
