@@ -50,7 +50,7 @@ const CARDS = [
 ];
 export default function AboutPage() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col ">
       <NavbarMenu />
       <SpotlightPreview
         classNameContainer=""
@@ -69,12 +69,6 @@ export default function AboutPage() {
           </div> */}
           <FormContact />
         </AuroraBackgroundContainer>
-        {/* <div className="md:flex">
-       
-          <div className="md:p-3 md:mt-0 mt-20 dark:text-white dark:bg-transparent">
-          
-          </div>
-        </div> */}
       </div>
       <div id="sec_3" className="h-screen w-full relative">
         <iframe

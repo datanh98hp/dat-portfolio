@@ -5,7 +5,7 @@ import { NavbarMenu } from "@/components/items/navbar";
 import React from "react";
 export default function Skill() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col ">
       <NavbarMenu />
       <VortexContainer className="h-screen">
         <ListSkill />
